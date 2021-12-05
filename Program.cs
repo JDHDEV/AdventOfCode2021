@@ -35,6 +35,12 @@ namespace AdventOfCode2021
                 case "day1b":
                     Day1B.Run();
                     break;
+                case "day2a":
+                    Day2A.Run();
+                    break;
+                case "day2b":
+                    Day2B.Run();
+                    break;
 
                 default:
                     Console.WriteLine("Input not recognized.");
