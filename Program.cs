@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AdventOfCode2021.Modules;
 
 namespace AdventOfCode2021
 {
@@ -10,6 +7,39 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
+            bool exit = false;
+            do
+            {
+                Console.Clear();
+                Console.Write("Enter puzzle to run: ");
+                HandleInput(Console.ReadLine());
+
+                Console.WriteLine();
+                Console.Write("Continue? (y/n): ");
+                string input = Console.ReadLine();
+
+                if (!input.ToLower().Equals("y"))
+                {
+                    exit = true;
+                }
+            } while (!exit);
+        }
+
+        private static void HandleInput(string input)
+        {
+            switch (input.ToLower())
+            {
+                case "day1a":
+                    Day1A.Run();
+                    break;
+                case "day1b":
+                    Day1B.Run();
+                    break;
+
+                default:
+                    Console.WriteLine("Input not recognized.");
+                    break;
+            }
         }
     }
 }
