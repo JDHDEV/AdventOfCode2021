@@ -147,7 +147,7 @@ namespace AdventOfCode2021.Modules
         {
             string[] lines = System.IO.File.ReadAllLines(@".\Inputs\Day5.txt");
             int largeX = 0;
-            int LargeY = 0;
+            int largeY = 0;
 
             LineSegment[] lineSegments = new LineSegment[lines.Length];
 
@@ -168,9 +168,9 @@ namespace AdventOfCode2021.Modules
                     largeX = lineSegments[i].x1;
                 }
 
-                if (lineSegments[i].y1 > LargeY)
+                if (lineSegments[i].y1 > largeY)
                 {
-                    LargeY = lineSegments[i].y1;
+                    largeY = lineSegments[i].y1;
                 }
 
                 if (lineSegments[i].x2 > largeX)
@@ -178,13 +178,13 @@ namespace AdventOfCode2021.Modules
                     largeX = lineSegments[i].x2;
                 }
 
-                if (lineSegments[i].y2 > LargeY)
+                if (lineSegments[i].y2 > largeY)
                 {
-                    LargeY = lineSegments[i].y2;
+                    largeY = lineSegments[i].y2;
                 }
             }
 
-            VentDiagram ventDiagram = new VentDiagram(largeX + 1, LargeY + 1);
+            VentDiagram ventDiagram = new VentDiagram(largeX + 1, largeY + 1);
 
             foreach (LineSegment lineSegment in lineSegments)
             {
