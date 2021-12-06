@@ -63,7 +63,10 @@ namespace AdventOfCode2021
                     Day6A.Run();
                     break;
                 case "day6b":
-                    Day6B.Run();
+                    Day6B.Run1();
+                    break;
+                case "day6b2":
+                    Day6B.Run2();
                     break;
 
                 default:

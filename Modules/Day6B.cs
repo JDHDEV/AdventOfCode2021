@@ -6,7 +6,7 @@ namespace AdventOfCode2021.Modules
     class Day6B
     {
         static Int64[] counts = new Int64[7];
-        public static void Run()
+        public static void Run1()
         {
             string fileName = "Day.0.dat";
 
@@ -123,6 +123,56 @@ namespace AdventOfCode2021.Modules
             {
                 int timer = Int32.Parse(timerStr);
                 countTotal += counts[timer];
+            }
+
+            return countTotal;
+        }
+
+        public static void Run2()
+        {
+            string ExampleFishTimers = "3,4,3,1,2";
+            Int64 exampleCountTotal = ProcessFishTimers(ExampleFishTimers);
+
+            string[] lines = System.IO.File.ReadAllLines(@".\Inputs\Day6.txt");
+            Int64 countTotal = ProcessFishTimers(lines[0]);
+
+            Console.WriteLine("Example Solution:");
+            Console.WriteLine(exampleCountTotal);
+            Console.WriteLine();
+
+            Console.WriteLine("Solution:");
+            Console.WriteLine(countTotal);
+        }
+
+        static Int64 ProcessFishTimers(string fishTimerStrs)
+        {
+            Int64[] fishTimers = new Int64[9];
+            string[] timerStrs = fishTimerStrs.Split(',');
+            
+            foreach (string timerStr in timerStrs)
+            {
+                int timer = Int32.Parse(timerStr);
+                fishTimers[timer]++;
+            }
+
+            for (int i = 0; i < 256; i++)
+            {
+                Int64 pregnantFish = fishTimers[0];
+
+                for (int j = 0; j < 8; j++)
+                {
+                    fishTimers[j] = fishTimers[j + 1];
+                }
+
+                fishTimers[6] += pregnantFish;
+                fishTimers[8] = pregnantFish;
+            }
+
+            Int64 countTotal = 0;
+
+            for (int i = 0; i < 9; i++)
+            {
+                countTotal += fishTimers[i];
             }
 
             return countTotal;
