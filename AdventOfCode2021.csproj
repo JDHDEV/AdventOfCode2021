@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Modules\Day10A.cs" />
     <Compile Include="Modules\Day10B.cs" />
+    <Compile Include="Modules\Day11A.cs" />
+    <Compile Include="Modules\Day11B.cs" />
     <Compile Include="Modules\Day1A.cs" />
     <Compile Include="Modules\Day1B.cs" />
     <Compile Include="Modules\Day2A.cs" />
@@ -75,6 +77,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Day10.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Day2.txt">
